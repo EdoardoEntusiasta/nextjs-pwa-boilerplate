@@ -1,0 +1,22 @@
+Nextjs project with:
+
+Webpack
+Storybook
+Babel
+React
+Typescript
+styled-components
+tsconfig-paths-webpack-plugin (for Storybook)
+
+
+ISSUES ENCOUNTERED
+When running "npm run extract" without NODE_ENV=development
+https://github.com/lingui/js-lingui/issues/952
+
+
+
+
+TO ADD LANGUAGES see: 
+_app.tsx
+next.config.js
+.linguirc
