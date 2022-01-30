@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Text from 'app/components/atoms/Text';
+import Text from '@atoms/Text';
 
 export default {
     title: 'atoms/Text',

@@ -5,9 +5,17 @@
       "@core/*": ["core/*"],
       "@locales/*": ["locales/*"],
       
-      "@atoms/*": ["app/components/atoms/*"],
-      "@molecules/*": ["app/components/molecules/*"],
-      "@organisms/*": ["app/components/organisms/*"],
+      "@atoms/*": ["components/atoms/*"],
+      "@molecules/*": ["components/molecules/*"],
+      "@organisms/*": ["components/organisms/*"],
+
+      "@helpers/*": ["utils/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
+      "@theme/*": ["theme/*"],
+      "@layouts/*": ["layouts/*"],
+
+
 
       "@coreTheme/*": ["core/theme/*"],
       "@coreHelpers/*": ["core/helpers/*"],

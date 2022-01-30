@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { fontTypes, unit } from '@coreTheme/DesignSystem/Variables';
-import { textGradient } from '@coreTheme/DesignSystem/Colors';
-import media from '@coreTheme/DesignSystem/MediaQueries';
-import { remCalc } from '@coreHelpers/Helpers.js';
+import { fontTypes, unit } from '@theme/DesignSystem/Variables';
+import { textGradient } from 'theme/DesignSystem/Colors';
+import media from '@theme/DesignSystem/MediaQueries';
+import { remCalc } from '@utils/helpers';
 
 
 

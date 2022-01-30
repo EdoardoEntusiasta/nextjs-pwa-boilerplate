@@ -1,4 +1,4 @@
-import { IGradient } from '@core/helpers/GlobalInterfaces';
+import { IGradient } from '@utils/GlobalInterfaces';
 
 export interface IText extends IGradient {
     text?: string;

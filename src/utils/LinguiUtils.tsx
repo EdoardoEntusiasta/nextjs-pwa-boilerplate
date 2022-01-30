@@ -24,10 +24,10 @@ export function initTranslation(i18n: I18n): void {
 export async function loadTranslation(locale: string, isProduction = true) {
   let data
   if (isProduction) {
-    data = await import(`./../../locales/${locale}/messages`)
+    data = await import(`./../locales/${locale}/messages`)
   } else {
     data = await import(
-      `@lingui/loader!./../../locales/${locale}/messages.po`
+      `@lingui/loader!./../locales/${locale}/messages.po`
     )
   }
 

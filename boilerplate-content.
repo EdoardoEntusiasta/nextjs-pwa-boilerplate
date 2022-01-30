@@ -20,3 +20,5 @@ TO ADD LANGUAGES see:
 _app.tsx
 next.config.js
 .linguirc
+
+npm run compile

@@ -2,24 +2,21 @@ import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 
 // Material
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 
 // Translations
 import { Trans } from '@lingui/macro';
-import { loadTranslation } from '@coreHelpers/LinguiUtils';
-
+import { loadTranslation } from '@utils/LinguiUtils';
 
 // Atoms
 import Text from '@atoms/Text';
 
+// Layout
+import LayoutBase from 'layouts/base/';
+
+import { gsap } from "gsap";
+import { useEffect, useRef } from 'react';
 
 /**
  * If you export a function called getStaticProps (Static Site Generation) from a page, 
@@ -42,57 +39,32 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 }
 
 
-function Copyright() {
-  return (
-    <Typography sx={{color: '#DDDDDD'}} variant="body2" color="text.secondary">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 const Home: NextPage = (props) => {
+
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      textRef.current,
+          {
+              opacity: 0,
+              y: '40px'
+          },
+          {
+              opacity: 1,
+              y: 0,
+              duration: 2,
+          }
+      );
+  });
+
   return (
     <>
     <Head>
       <title>Entuasiasta&apos;s pwa boilerplate</title>
     </Head>
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Trans>Home</Trans>
-          </Typography>
-          
-          <Button color="inherit">
-            <Trans>Login</Trans>
-          </Button>
-
-        </Toolbar>
-      </AppBar>
-    </Box>
-      <Box
-      sx={{
-        display: 'flex',
-        backgroundColor: 'rgb(0, 30, 60)', 
-        flexDirection: 'column',
-        minHeight: '100vh',
-        color: 'white'
-      }}
-    >
-      <CssBaseline />
+    <LayoutBase>
+      <div ref={textRef}>
         <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
           <Typography variant="h2" component="h1" gutterBottom>
             <Trans>Welcome to boilerplate</Trans>
@@ -102,23 +74,8 @@ const Home: NextPage = (props) => {
           </Typography>
           <Typography variant="body1">Sticky footer placeholder.</Typography>
         </Container>
-        <Box
-          component="footer"
-          sx={{
-            py: 3,
-            px: 2,
-            mt: 'auto',
-            backgroundColor: 'rgb(45 57 67)'
-          }}
-        >
-          <Container maxWidth="sm">
-            <Typography variant="body1">
-              My sticky footer can be found here.
-            </Typography>
-            <Copyright />
-          </Container>
-        </Box>
-      </Box>
+      </div>
+    </LayoutBase>
     </>
   )
 }

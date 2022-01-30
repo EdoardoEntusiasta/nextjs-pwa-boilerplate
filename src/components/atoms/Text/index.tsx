@@ -1,6 +1,6 @@
 import { TextWrapper, StyledText } from './styled';
 import { IText } from './interfaces';
-import { parsedText } from '@coreHelpers/Utils';
+import { parsedText } from '@helpers/Utils';
 
 const Text = ({ tag, strong, type, gradient, color, align, text }: IText) => {
 

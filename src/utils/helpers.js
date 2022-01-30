@@ -1,5 +1,5 @@
 
-import { fontTypes } from '@coreTheme/DesignSystem/Variables';
+import { fontTypes } from '@theme/DesignSystem/Variables';
 
 /**
  * IdGenerator
