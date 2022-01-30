@@ -4,6 +4,7 @@ import Head from 'next/head'
 // Material
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
 
 // Translations
 import { Trans } from '@lingui/macro';
@@ -17,6 +18,7 @@ import LayoutBase from 'layouts/base/';
 
 import { gsap } from "gsap";
 import { useEffect, useRef } from 'react';
+import { Button } from '@atoms/Button';
 
 /**
  * If you export a function called getStaticProps (Static Site Generation) from a page, 
@@ -73,6 +75,9 @@ const Home: NextPage = (props) => {
             <Text text={'Pin a footer to the bottom of the viewport. The footer will move as the main element of the page grows.'}></Text>
           </Typography>
           <Typography variant="body1">Sticky footer placeholder.</Typography>
+          <Link href="/it">Italiano</Link>
+          &nbsp;|&nbsp;
+          <Link href="/en-US">English</Link>
         </Container>
       </div>
     </LayoutBase>
