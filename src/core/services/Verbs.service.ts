@@ -1,27 +1,24 @@
 import axios from 'axios';
-import { CoreStorageService } from './Storage.service';
-import { CoreResponseModel } from '../Models/Response.model';
-import { Environment } from '../../Setup';
+import { CoreResponseModel } from '../models/Response.model';
+
+const BASE_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
 
 export class CoreVerbsService {
 
     // todo setup degli headers
 
-    constructor(
-        Storage
-        ) {
-      }
+    constructor() {}
     
       formatErrors(error) {
         return error.error;
       }
     
       url(path) {
-        return `${Environment.serviceUrl}${path}`;
+        return `${BASE_ENDPOINT}${path}`;
       }
 
-      get(path, params = null, serviceUrl = Environment.SERVICE_URL) {
+      get(path, params = null, serviceUrl = BASE_ENDPOINT) {
         return axios({
           method: 'get',
           params,
@@ -29,12 +26,12 @@ export class CoreVerbsService {
           responseType:'stream'
         })
         .then(response => {
-          return new CoreResponseModel(response);
+          return new CoreResponseModel(response) as CoreResponseModel;
         })
         .catch(err => console.log(err));
       }
 
-      post(path, body = {}, serviceUrl = Environment.SERVICE_URL) {
+      post(path, body = {}, serviceUrl = BASE_ENDPOINT) {
         return axios({
           method: 'post',
           url: `${serviceUrl}${path}`,
@@ -48,7 +45,7 @@ export class CoreVerbsService {
         .catch(err => console.log(err));
       }
 
-      put(path, body = {}, serviceUrl = Environment.SERVICE_URL) {
+      put(path, body = {}, serviceUrl = BASE_ENDPOINT) {
         return axios({
           method: 'put',
           url: `${serviceUrl}${path}`,
@@ -61,7 +58,7 @@ export class CoreVerbsService {
         .catch(err => console.log(err));
       }
     
-      delete(path, data, serviceUrl = Environment.SERVICE_URL) {
+      delete(path, data?: any | null, serviceUrl: any = BASE_ENDPOINT) {
         return axios({
           method: 'delete',
           url: `${serviceUrl}${path}`,
@@ -74,7 +71,7 @@ export class CoreVerbsService {
         .catch(err => console.log(err));
       }
     
-      patch(path, body = {}, serviceUrl = Environment.SERVICE_URL) {
+      patch(path, body = {}, serviceUrl = BASE_ENDPOINT) {
         return axios({
           method: 'patch',
           url: `${serviceUrl}${path}`,

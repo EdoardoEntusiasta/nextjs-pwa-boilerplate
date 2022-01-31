@@ -1,4 +1,5 @@
 
+import { IResponse } from '@core/interfaces/IResponse';
 import { CoreResultInstanceModel } from './ResultInstance.model';
 
 // !Axios format ready
@@ -13,12 +14,11 @@ export const USERDATA_SLUG = 'userdata';
  * Response Model
  * If the server's response is modified this model is the only file to modify (and ResponseInterface )
  */
-export class CoreResponseModel {
+export class CoreResponseModel implements IResponse {
 
   errors; // any[] | any
   data; // any
   headers; // any
-  is_mock; // boolean
   type; // string
   blob; // any
   status;
@@ -53,7 +53,7 @@ export class CoreResponseModel {
 
   getDataModel(forceArray = false, mapFilter = null) {
     if (forceArray) {
-      let data = [];
+      let data: Array<any> = [];
       Object.keys(this.data).forEach(key => {
         data.push(this.data[key]);
       });
@@ -102,7 +102,7 @@ export class CoreResponseModel {
   download(fileName) {
     if (this.blob) {
       const dataType = this.blob.type;
-      const binaryData = [];
+      const binaryData: Array<any> = [];
       binaryData.push(this.blob);
       const downloadLink = document.createElement('a');
       downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, {type: dataType}));

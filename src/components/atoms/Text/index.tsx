@@ -16,7 +16,7 @@ const Text = ({ tag, strong, type, gradient, color, align, text }: IText) => {
         >
             { ! isString ? 
                 <>{ text }</>
-                : <></>
+                : null
             }
         </StyledText>
     );

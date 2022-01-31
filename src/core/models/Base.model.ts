@@ -1,6 +1,8 @@
 
 export class CoreBaseModel {
 
+    id: number | null = null;
+
     static getResourceName() {
       return '';
     }
@@ -9,7 +11,7 @@ export class CoreBaseModel {
      * Models of the sub objects of this model
      * ex. article<articleModel>.user<userModel>
      */
-    static getSubTypesList() {
+    static getSubTypesList(): Array<any> | null {
       return null;
       /**
        * ex.
@@ -23,16 +25,6 @@ export class CoreBaseModel {
       if (data) {
         Object.assign(this, data);
       }
-    }
-
-    toggleSelect() {
-      this._state.selected = !this._state.selected;
-      return this;
-    }
-
-    toggleDelete() {
-      this._state.deleted = !this._state.deleted;
-      return this;
     }
 
     assignProperty(key, value) {

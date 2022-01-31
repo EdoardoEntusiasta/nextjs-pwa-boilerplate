@@ -1,15 +1,17 @@
 
 import { CoreVerbsService } from './Verbs.service';
-import { CoreServiceErrorModel } from './../Models/ServiceError.model';
+import { CoreServiceErrorModel } from '../Models/ServiceError.model';
 import { catchError, map } from 'rxjs/operators';
 import { throwError, of } from 'rxjs';
-import { CoreStorageService } from './Storage.service';
+import { CoreResponseModel } from '@core/models/Response.model';
+import { IResponse } from '@core/interfaces/IResponse';
 
 
 export class CoreBaseService {
 
-    apiService = null;
-    path;
+    apiService: CoreVerbsService;
+    T: any;
+    path = '';
     tempModel;
     reactState;
     cacheEnabled = [];
@@ -27,9 +29,8 @@ export class CoreBaseService {
       }
     };
   
-    constructor(T, subSlug = null) {
+    constructor(T, subSlug: any | null = '') {
       this.apiService = new CoreVerbsService();
-      this.router = null;
       if (T === null) {
         this.T = null;
         this.path = subSlug;
@@ -94,8 +95,8 @@ export class CoreBaseService {
      * Get action
      * @param {*} data 
     */
-    get(code = '', query = null, raw = false, deleteEmpty = false) {
-      const getParams = {params: null};
+    get(code?, query = null, raw = false, deleteEmpty = false) {
+      const getParams: {params} = {params: null};
       if (query) {
         getParams.params = query;
       }
@@ -106,17 +107,15 @@ export class CoreBaseService {
           }
         });
       }
+      console.log(code);
       return this.apiService.get(this.getGetterPath(code), getParams.params)
-        .then(item => {
+        .then((item: CoreResponseModel) => {
           if (raw) {
-            return item;
-          }
-          if(item.data.risultato == 'ko') {
             return item;
           }
           if (this.T) {
             if (Array.isArray(item.data)) {
-              const list = [];
+              const list: Array<any> = [];
               for (const record of item.data) {
                 let model = null;
                 if (this.T) {
@@ -191,7 +190,7 @@ export class CoreBaseService {
         }
         if (this.T) {
           if (Array.isArray(item.data)) {
-            const list = [];
+            const list: Array<any> = [];
             for (const record of item.data) {
               let model = null;
               if (this.T) {
@@ -216,14 +215,14 @@ export class CoreBaseService {
      * @param {*} data 
     */
     put(data, code = null) {
-      return this.apiService.put(this.getCreatePath(data, code), data)
+      return this.apiService.put(this.getCreatePath(/*data, code*/), data)
       .then(item => {
         if(item.data.risultato == 'ko') {
           return item;
         }
         if (this.T) {
           if (Array.isArray(item.data)) {
-            const list = [];
+            const list: Array<any> = [];
             for (const record of item.data) {
               let model = null;
               if (this.T) {
@@ -299,7 +298,7 @@ export class CoreBaseService {
      * Format get path url
     */
     getGetterPath(code) {
-      return `${this.path}/${code}`;
+      return `${this.path}/${code ? code : ''}`;
     }
     
     /**
@@ -312,7 +311,7 @@ export class CoreBaseService {
     /**
      * Format update path url
     */
-    getUpdatePath(data, code = null) {
+    getUpdatePath(data, code: any | null = null) {
       return `${this.path}/${code == -1 ? '' : code ? code : data.getId()}`;
     }
     
@@ -334,7 +333,7 @@ export class CoreBaseService {
     errorHandl = (error) => {
       // todo qui  bisogna standardizzare: vd. error.error
       this.afterCall();
-      const errorData = {};
+      const errorData: any = {};
       if (error.error instanceof ErrorEvent) {
         // Get client-side error
         errorData.message = error.error.message;
@@ -343,18 +342,7 @@ export class CoreBaseService {
         console.error(error);
         // UNAUTHORIZED or FORBIDDEN ?
         if (error.status === 401 /*|| error.status === 403*/) {
-          if (this.configuration.errors.unhautorized.clear) {
-            const ss = new CoreStorageService();
-            ss.clearSession();
-          }
-          // todo
-          /*
-          // todo
-          if (this.configuration.errors.unhautorized.redirectToLogin) {
-            this.router.navigateByUrl('/' + StandardRoutes.LOGIN);
-          }
-          */
-          // return [];
+          // ? clear SESSION?
         }
         // Custom callbacks
         if (this.configuration.errors.hasOwnProperty(error.status)) {
@@ -371,7 +359,7 @@ export class CoreBaseService {
      * After call
      * It is performed at each end of the call
     */
-    afterCall(data) {
+    afterCall(data?: any) {
       // Back to default model
       if (this.tempModel) {
         this.T = this.tempModel;

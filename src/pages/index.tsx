@@ -1,10 +1,12 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import { useEffect, useRef, useState } from 'react';
 
 // Material
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
+import { Box } from '@mui/material';
 
 // Translations
 import { Trans } from '@lingui/macro';
@@ -12,16 +14,21 @@ import { loadTranslation } from '@utils/LinguiUtils';
 
 // Atoms
 import Text from '@atoms/Text';
+import { Button } from '@atoms/Button';
 
 // Layout
 import LayoutBase from 'layouts/base/';
 
+// Gsap
 import { gsap } from "gsap";
-import { useEffect, useRef, useState } from 'react';
-import { Button } from '@atoms/Button';
+
+// Molecules
 import Modal from '@molecules/Modal';
-import LoginForm from '@drafts/LoginForm';
-import { Box } from '@mui/material';
+
+// Drafts
+import LoginForm from '@mytools/components/LoginForm';
+import { UsersService } from '@mytools/services/SampleService';
+
 /**
  * If you export a function called getStaticProps (Static Site Generation) from a page, 
  * Next.js will pre-render this page at build time using the props returned by getStaticProps.
@@ -45,9 +52,12 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
 const Home: NextPage = (props) => {
 
+  const userService = new UsersService();
+
+  userService.get();
+
   const textRef = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
-
   useEffect(() => {
     gsap.fromTo(
       textRef.current,
