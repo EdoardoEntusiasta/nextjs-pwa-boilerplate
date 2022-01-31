@@ -1,6 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+The package is made of:
+
+Nextjs, Webpack 5, Storybook, Babel, React, Typescript, gsap, styled-components, next i18n, lingui
+
 
 First, run the development server:
 
