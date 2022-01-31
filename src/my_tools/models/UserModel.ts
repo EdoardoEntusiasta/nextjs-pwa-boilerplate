@@ -1,4 +1,5 @@
 import { CoreBaseModel } from '@core/models/Base.model';
+import { IUser } from '@mytools/interfaces/IUser';
 import UserCertificationModel from './UserCertificationModel';
 
 /**
@@ -6,13 +7,13 @@ import UserCertificationModel from './UserCertificationModel';
  * This class represents the object obtained through the Users endpoint
  * Methods for property manipulation can be added to this class.
  */
-export class UserModel extends CoreBaseModel {
+export class UserModel extends CoreBaseModel implements IUser {
     
     /*
-    name;
+    name
     surname;
     birthdate;
-    certifications: Array<UserCertificationModel>;
+    certifications;
     */
 
     /**
@@ -41,8 +42,18 @@ export class UserModel extends CoreBaseModel {
      * @returns 
      */
     getAge() {
-        // ! todo
-        // return this.birthdate;
+        var today = new Date();
+        var birthDate = new Date(this.birthdate);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+
+    totalCerts() {
+        return this.certifications.length;
     }
 
 }

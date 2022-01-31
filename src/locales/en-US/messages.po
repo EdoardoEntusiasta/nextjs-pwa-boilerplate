@@ -13,32 +13,55 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/index.tsx:95
+#: src/pages/services/index.tsx:108
+msgid "Age"
+msgstr "Age"
+
+#: src/pages/services/index.tsx:107
+msgid "Birth date"
+msgstr "Birth date"
+
+#: src/layouts/base/index.tsx:43
+msgid "Boilerplate"
+msgstr ""
+
+#: src/pages/index.tsx:94
 msgid "Boilerplate intro"
 msgstr "A boilerplate to get started developing your progressive web app with Nextjs, React, Gsap, and Material-UI"
 
-#: src/layouts/base/index.tsx:42
-msgid "Home"
-msgstr ""
+#: src/pages/services/index.tsx:109
+msgid "Certs."
+msgstr "Certs."
 
-#: src/layouts/base/index.tsx:76
+#: src/layouts/base/index.tsx:42
+#~ msgid "Home"
+#~ msgstr ""
+
+#: src/layouts/base/index.tsx:75
 msgid "If you need more info"
 msgstr "If you need more information you can visit the github repo"
 
-#: src/layouts/base/index.tsx:46
 #: src/my_tools/components/LoginForm/index.tsx:127
 #: src/my_tools/components/LoginForm/index.tsx:162
 msgid "Login"
 msgstr ""
 
-#: src/pages/index.tsx:99
+#: src/pages/index.tsx:98
 msgid "Login modal"
 msgstr "Login modal"
 
-#: src/pages/index.tsx:92
+#: src/pages/services/index.tsx:105
+msgid "Name"
+msgstr "Name"
+
+#: src/pages/services/index.tsx:106
+msgid "Surname"
+msgstr "Surname"
+
+#: src/pages/index.tsx:91
 msgid "Welcome to boilerplate"
 msgstr "Welcome to an Entusiasta's boilerplate"
 
-#: src/pages/index.tsx:97
+#: src/pages/index.tsx:96
 msgid "Wish you good work"
 msgstr "Wish you a good work"
