@@ -2,8 +2,6 @@
 import { IResponse } from '@core/interfaces/IResponse';
 import { CoreResultInstanceModel } from './ResultInstance.model';
 
-// !Axios format ready
-
 /**
  * Slug which refers to user data received at login
  * it is used as a key for storing user data after logging in
@@ -25,7 +23,6 @@ export class CoreResponseModel implements IResponse {
 
   constructor(response) {
     if (response) {
-        //Object.assign(this, response);
 		  this.data = response.data.data;
     }
   }

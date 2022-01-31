@@ -5,16 +5,11 @@ import { useEffect, useRef, useState } from 'react';
 // Material
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
-import { Box, Card } from '@mui/material';
 
 // Translations
 import { Trans } from '@lingui/macro';
 import { loadTranslation } from '@utils/LinguiUtils';
 
-// Atoms
-import Text from '@atoms/Text';
-import { Button } from '@atoms/Button';
 
 // Layout
 import LayoutBase from 'layouts/base/';
@@ -26,7 +21,6 @@ import { gsap } from "gsap";
 import Modal from '@molecules/Modal';
 
 // Drafts
-import LoginForm from '@mytools/components/LoginForm';
 import { UsersService } from '@mytools/services/SampleService';
 
 /**
@@ -77,18 +71,18 @@ const Blog: NextPage = (props) => {
 
   return (
     <>
-    <Head>
-      <title>Entuasiasta&apos;s pwa boilerplate blog</title>
-    </Head>
-    <LayoutBase>
-      <div ref={textRef}>
-        <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
-          <Typography variant="h2" component="h1" gutterBottom>
-            Blog
-          </Typography>
-        </Container>
-      </div>
-    </LayoutBase>
+      <Head>
+        <title>Entuasiasta&apos;s pwa boilerplate blog</title>
+      </Head>
+      <LayoutBase>
+        <div ref={textRef}>
+          <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
+            <Typography variant="h2" component="h1" gutterBottom>
+              Blog
+            </Typography>
+          </Container>
+        </div>
+      </LayoutBase>
     </>
   )
 }

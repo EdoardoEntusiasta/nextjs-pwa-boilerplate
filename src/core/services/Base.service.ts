@@ -6,6 +6,16 @@ import { throwError, of } from 'rxjs';
 import { CoreResponseModel } from '@core/models/Response.model';
 
 
+/**
+ * CoreBaseService
+ * please note that:
+ * Response is expected in the format:
+ *  
+ * {
+ *  data: [] | {} | string | number
+ * }
+ * 
+ */
 export class CoreBaseService {
 
     apiService: CoreVerbsService;

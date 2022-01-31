@@ -60,7 +60,9 @@ LINKS
 If you want to make sure that the links follow the current translation, use the TextLink component which automatically adds the prefix of the active language.
 
 ## Integrated fetch calls
-todo
+The package contains a series of interceptors and classes useful for managing the API response data. Through some procedures shown as an example it will be possible to create your own services and the corresponding data models.
+Note that these services are configured to work with a well-defined response structure, also exposed in the code. Obviously, no one prevents you from manipulating the algorithms to meet your needs.
+To get an idea, look in the "my_tools/services" and "my_tools/models" folder.
 
 
 ## Learn More
