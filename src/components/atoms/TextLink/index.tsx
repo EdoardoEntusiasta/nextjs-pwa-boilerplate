@@ -14,7 +14,7 @@ const TextLink = ({ href, with_locale, underline, variant, color, children }: IT
 
     const router = useRouter()
     const locale = String(router.locale || router.defaultLocale)
-    console.log(href);
+ 
     return (
         <>
             <Link 
