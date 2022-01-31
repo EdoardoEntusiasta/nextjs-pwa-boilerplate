@@ -28,6 +28,8 @@ npm run storybook
 yarn storybook
 ```
 
+To learn more visit the official documentation: https://storybook.js.org/docs/react/get-started/introduction
+
 
 ## Lingui js
 Configuration is based on the following guide
