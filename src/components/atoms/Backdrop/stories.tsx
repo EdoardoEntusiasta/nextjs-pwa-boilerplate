@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Backdrop from '@components/atoms/Backdrop';
+import Backdrop from '@atoms/Backdrop';
 
 export default {
     title: 'Atoms/Backdrop',

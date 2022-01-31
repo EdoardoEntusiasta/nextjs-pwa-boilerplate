@@ -23,6 +23,5 @@ const Template: ComponentStory<typeof Icon> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-    variant: 'sunrise',
     icon: 'weather-thunder',
 };
