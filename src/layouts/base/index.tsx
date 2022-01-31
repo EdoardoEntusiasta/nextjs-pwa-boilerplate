@@ -11,12 +11,13 @@ import IconButton from '@mui/material/IconButton';
 import { StyledBar } from './styled';
 import { Trans } from '@lingui/macro';
 import { zIndex } from '@theme/DesignSystem/Variables';
+import TextLink from '@atoms/TextLink';
 
 function Copyright() {
   return (
     <Typography sx={{color: '#DDDDDD'}} variant="body2" color="text.secondary">
       {'Entusiasta: '}
-      <Link color={'inherit'} target="_blank" href="https://github.com/EdoardoEntusiasta/nextjs-pwa-boilerplate">boilerplate info and configuration</Link>{' '}
+      <Link color={'inherit'} target="_blank" href="https://github.com/EdoardoEntusiasta/nextjs-pwa-boilerplate">https://github.com/EdoardoEntusiasta/nextjs-pwa-boilerplate</Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -41,11 +42,9 @@ const LayoutBase = ({ children }) => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Trans>Home</Trans>
           </Typography>
-          
-          <Button color="inherit">
-            <Trans>Login</Trans>
-          </Button>
-
+          <TextLink href="login">Login</TextLink>
+          &nbsp;&nbsp;&nbsp;
+          <TextLink href="blog">Blog</TextLink>
         </Toolbar>
       </StyledBar>
     </Box>
