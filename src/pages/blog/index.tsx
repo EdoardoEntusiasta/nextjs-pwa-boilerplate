@@ -54,7 +54,9 @@ const Blog: NextPage = (props) => {
 
   const userService = new UsersService();
 
-  userService.get();
+  userService.get().then((res) => {
+    console.log(res);
+  });
 
   const textRef = useRef(null);
 

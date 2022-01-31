@@ -17,7 +17,7 @@ export class CoreVerbsService {
       }
 
       get(path, params = null, serviceUrl = BASE_ENDPOINT) {
-        return axios({
+        return axios.request({
           method: 'get',
           params,
           url: `${serviceUrl}${path}`,
@@ -26,7 +26,7 @@ export class CoreVerbsService {
         .then(response => {
           return new CoreResponseModel(response);
         })
-        .catch(err => console.log(err));
+        .catch(err => new CoreResponseModel(err));
       }
 
       post(path, body = {}, serviceUrl = BASE_ENDPOINT) {
@@ -39,7 +39,7 @@ export class CoreVerbsService {
         .then(response => {
           return new CoreResponseModel(response);
         })
-        .catch(err => console.log(err));
+        .catch(err => new CoreResponseModel(err));
       }
 
       put(path, body = {}, serviceUrl = BASE_ENDPOINT) {
@@ -52,7 +52,7 @@ export class CoreVerbsService {
         .then(response => {
           return new CoreResponseModel(response);
         })
-        .catch(err => console.log(err));
+        .catch(err => new CoreResponseModel(err));
       }
     
       delete(path, data?: any | null, serviceUrl: any = BASE_ENDPOINT) {
@@ -65,7 +65,7 @@ export class CoreVerbsService {
         .then(response => {
           return new CoreResponseModel(response);
         })
-        .catch(err => console.log(err));
+        .catch(err => new CoreResponseModel(err));
       }
     
       patch(path, body = {}, serviceUrl = BASE_ENDPOINT) {
@@ -78,7 +78,7 @@ export class CoreVerbsService {
         .then(response => {
           return new CoreResponseModel(response);
         })
-        .catch(err => console.log(err));
+        .catch(err => new CoreResponseModel(err));
       }
     
 }

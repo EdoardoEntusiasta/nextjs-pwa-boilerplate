@@ -1,31 +1,22 @@
 import { CoreBaseModel } from '@core/models/Base.model';
+import UserCertificationModel from './UserCertificationModel';
 
 /**
  * Example model class
  */
 export class UserModel extends CoreBaseModel {
-
-    nome_cognome;
-    iniziali;
-    utente_id;
-    nome;
-    cognome;
-    ruoli;
-    unita;
-    unita_primaria;
-    unita_secondaria;
-    dispo_rol_giorni;
-    rol_usati;
-    dispo_ferie_giorni;
-    ferie_usati;
-    dispo_altri_giorni;
-    altri_usati;
+    /*
+    name;
+    surname;
+    birthdate;
+    certifications: Array<UserCertificationModel>;
+    */
 
     /**
      * Service resource name (api endpoint)
      */
     static getResourceName() {
-        return  ''; //'users';
+        return  'users'; //'users';
     }
 
     /**
@@ -33,7 +24,7 @@ export class UserModel extends CoreBaseModel {
      */
     static getSubTypesList() {
         return [
-            /*{object: 'roles', model: MyRolesClassModel},*/
+            {object: 'certifications', model: UserCertificationModel},
         ];
     }
 

@@ -26,7 +26,7 @@ export class CoreResponseModel implements IResponse {
   constructor(response) {
     if (response) {
         //Object.assign(this, response);
-		  this.data = response.data;
+		  this.data = response.data.data;
     }
   }
 

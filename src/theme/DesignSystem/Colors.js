@@ -42,11 +42,6 @@ export const shadows = {
 export const gradients = {
     black: ['black 1%', 'transparent 99%'],
     white: ['white 1%', 'transparent 99%'],
-    spectrum: ['#FF9E00 10%', '#FF0000 35%', '#85007D 60%', '#21429C 85%', '#0071FF 100%'],
-    spectrum_shape: ['#FF9E00 0%', '#FF0000 35%', '#85007D 60%', '#21429C 85%', '#0071FF 100%'],
-    wifi: ['#6E00FF 10%', '#FF00A5 90%'],
-    triple_play: ['#FFD500 0%', '#FF0400 20%', '#B91ABE 48%', '#B91ABE 75%', '#1400FF 100%'],
-    skyq: ['#000FF5 10%', '#00D2FF 90%'],
     extra1: ['#EF8300 0%', '#FBBF00 100%'],
     extra3: ['#E20512 0%', '#DF520B 100%'],
     extra6: ['#A62979 0%', '#E7418F 100%'],

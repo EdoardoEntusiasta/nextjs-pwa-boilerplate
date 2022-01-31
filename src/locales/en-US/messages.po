@@ -15,7 +15,7 @@ msgstr ""
 
 #: src/pages/index.tsx:95
 msgid "Boilerplate intro"
-msgstr "A boilerplate to start developing your pwa with Nextjs, React, Gsap, and Material-UI"
+msgstr "A boilerplate to get started developing your progressive web app with Nextjs, React, Gsap, and Material-UI"
 
 #: src/layouts/base/index.tsx:42
 msgid "Home"

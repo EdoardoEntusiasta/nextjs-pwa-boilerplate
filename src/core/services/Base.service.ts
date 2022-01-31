@@ -107,16 +107,16 @@ export class CoreBaseService {
           }
         });
       }
-      console.log(code);
       return this.apiService.get(this.getGetterPath(code), getParams.params)
         .then((item: CoreResponseModel) => {
           if (raw) {
             return item;
           }
+          let dataRes = item.data;
           if (this.T) {
-            if (Array.isArray(item.data)) {
+            if (Array.isArray(dataRes)) {
               const list: Array<any> = [];
-              for (const record of item.data) {
+              for (const record of dataRes) {
                 let model = null;
                 if (this.T) {
                   model = new this.T(record);
@@ -126,8 +126,8 @@ export class CoreBaseService {
               }
               item.data = list;
             } else {
-              item.data = new this.T(item.data);
-              this.instantiateSubObjects(this.T, item.data);
+              dataRes = new this.T(dataRes);
+              this.instantiateSubObjects(this.T, dataRes);
             }
           }
           this.afterCall(item.getData());

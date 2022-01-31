@@ -19,7 +19,7 @@ const TextLink = ({ href, with_locale, underline, variant, color, children }: IT
         <>
             <Link 
                 variant={variant} 
-                underline={underline ? underline : 'never'} 
+                underline={underline ? underline : 'none'} 
                 color={color ? color : '#FFFFFF'}
                 href={`/${with_locale == null ? locale + '/' : with_locale ? locale : ''}${href}`}>
                 { children }

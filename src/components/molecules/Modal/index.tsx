@@ -8,6 +8,7 @@ import { Tween, PlayState } from 'react-gsap';
 import Icon from '@atoms/Icon';
 
 const Modal = ({ open, set_open, dismiss_click_out, footer, children, modifiers }: IModal) => {
+
     const [render, setRender] = useState(false);
     const [dialogTl, setDialogTl] = useState(PlayState.pause);
 
