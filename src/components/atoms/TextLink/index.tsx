@@ -14,14 +14,14 @@ const TextLink = ({ href, with_locale, underline, variant, color, children }: IT
 
     const router = useRouter()
     const locale = String(router.locale || router.defaultLocale)
-    
+    console.log(href);
     return (
         <>
             <Link 
                 variant={variant} 
                 underline={underline ? underline : 'never'} 
                 color={color ? color : '#FFFFFF'}
-                href={`${with_locale == null ? locale + '/' : with_locale ? locale : ''}${href}`}>
+                href={`/${with_locale == null ? locale + '/' : with_locale ? locale : ''}${href}`}>
                 { children }
             </Link>
         </>

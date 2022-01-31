@@ -5,13 +5,13 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
+
 import IconButton from '@mui/material/IconButton';
 
 import { StyledBar } from './styled';
 import { Trans } from '@lingui/macro';
-import { zIndex } from '@theme/DesignSystem/Variables';
 import TextLink from '@atoms/TextLink';
+
 
 function Copyright() {
   return (
@@ -40,9 +40,9 @@ const LayoutBase = ({ children }) => {
           >
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Trans>Home</Trans>
+            <Trans>Boilerplate</Trans>
           </Typography>
-          <TextLink href="login">Login</TextLink>
+          <TextLink href="">Home</TextLink>
           &nbsp;&nbsp;&nbsp;
           <TextLink href="blog">Blog</TextLink>
         </Toolbar>
