@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 import AppBar from '@mui/material/AppBar';
+import { zIndex } from '@theme/DesignSystem/Variables';
 
 export const StyledBar = styled(AppBar)`
-  ${(props) => props.position && `height: ${props.position ? props.position : 'sticky'};`}
+  z-index: ${zIndex.flat} !important;
+  ${(props) => props.position && `position: ${props.position ? props.position : 'sticky'};`}
 `;

@@ -5,8 +5,9 @@ import { getModifiers } from '@utils/helpers';
 // import Icon from '@components/atoms/Icon';
 import Backdrop from '@atoms/Backdrop';
 import { Tween, PlayState } from 'react-gsap';
+import Icon from '@atoms/Icon';
 
-const Modal = ({ open, set_open, footer, children, modifiers }: IModal) => {
+const Modal = ({ open, set_open, dismiss_click_out, footer, children, modifiers }: IModal) => {
     const [render, setRender] = useState(false);
     const [dialogTl, setDialogTl] = useState(PlayState.pause);
 
@@ -24,7 +25,7 @@ const Modal = ({ open, set_open, footer, children, modifiers }: IModal) => {
     return (
         render && (
             <>
-                <Backdrop open={open} />
+                <Backdrop on_click={dismiss_click_out ? () => {setRender(false)} : () => { }} open={open} />
                 <StyledModal {...getModifiers(modifiers, { footer })}>
                     <Tween
                         from={{ y: '-50%', opacity: 0 }}
@@ -33,7 +34,7 @@ const Modal = ({ open, set_open, footer, children, modifiers }: IModal) => {
                         playState={dialogTl}
                     >
                         <Dialog>
-                            {/*<Icon icon="cross" on_click={() => set_open(false)} />*/}
+                            <Icon icon="light-icon-circle-x" on_click={() => set_open ? set_open(false) : null} />
                             <ContentWrapper>
                                 <Content>{children}</Content>
                             </ContentWrapper>

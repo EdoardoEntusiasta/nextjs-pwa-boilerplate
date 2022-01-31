@@ -4,14 +4,21 @@ import { parsedText } from '@helpers/Utils';
 
 const Text = ({ tag, strong, type, gradient, color, align, text }: IText) => {
 
+    const isString = typeof text === 'string';
+
     const textBody = (
         <StyledText
             as={tag === 'p' ? 'p' : tag}
             color={color}
             strong={strong}
             type={type}
-            dangerouslySetInnerHTML={{ __html: parsedText(text ? text : '') }}
-        />
+            dangerouslySetInnerHTML={ isString ? { __html: parsedText(text ? text : '') } : null}
+        >
+            { ! isString ? 
+                <>{ text }</>
+                : <></>
+            }
+        </StyledText>
     );
 
     return (

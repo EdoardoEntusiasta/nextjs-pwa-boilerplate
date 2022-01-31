@@ -9,6 +9,8 @@
       "@molecules/*": ["components/molecules/*"],
       "@organisms/*": ["components/organisms/*"],
 
+      "@drafts/*": ["components/drafts/*"],
+
       "@helpers/*": ["utils/*"],
       "@utils/*": ["utils/*"],
       "@hooks/*": ["hooks/*"],

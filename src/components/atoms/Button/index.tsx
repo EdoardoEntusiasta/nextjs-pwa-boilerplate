@@ -11,6 +11,6 @@ export const Button = ({
   ...props
 }: IButton) => {
   return (
-    <StyledButton variant={variant ? variant : 'contained'}>{label}</StyledButton>
+    <StyledButton {...props} variant={variant ? variant : 'contained'}>{label}</StyledButton>
   );
 };

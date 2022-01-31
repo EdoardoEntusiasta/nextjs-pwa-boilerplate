@@ -17,9 +17,11 @@ import Text from '@atoms/Text';
 import LayoutBase from 'layouts/base/';
 
 import { gsap } from "gsap";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from '@atoms/Button';
-
+import Modal from '@molecules/Modal';
+import LoginForm from '@drafts/LoginForm';
+import { Box } from '@mui/material';
 /**
  * If you export a function called getStaticProps (Static Site Generation) from a page, 
  * Next.js will pre-render this page at build time using the props returned by getStaticProps.
@@ -44,6 +46,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 const Home: NextPage = (props) => {
 
   const textRef = useRef(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     gsap.fromTo(
@@ -58,10 +61,13 @@ const Home: NextPage = (props) => {
               duration: 2,
           }
       );
-  });
+  }, []);
 
   return (
     <>
+    <Modal open={modalOpen} set_open={setModalOpen}>
+      <LoginForm></LoginForm>
+    </Modal>
     <Head>
       <title>Entuasiasta&apos;s pwa boilerplate</title>
     </Head>
@@ -72,12 +78,17 @@ const Home: NextPage = (props) => {
             <Trans>Welcome to boilerplate</Trans>
           </Typography>
           <Typography variant="h5" component="h2" gutterBottom>
-            <Text text={'Pin a footer to the bottom of the viewport. The footer will move as the main element of the page grows.'}></Text>
+            <Text text={<Trans>Boilerplate intro</Trans>}></Text>
           </Typography>
-          <Typography variant="body1">Sticky footer placeholder.</Typography>
-          <Link href="/it">Italiano</Link>
-          &nbsp;|&nbsp;
-          <Link href="/en-US">English</Link>
+          <Typography variant="body1"><Trans>Wish you good work</Trans></Typography>
+          <Box mt={1.5}>
+            <Button label={<Trans>Login modal</Trans>} variant='contained' onClick={() => setModalOpen(true)} />
+          </Box>
+          <Box mt={5}>
+            <Link href="/it">Italiano</Link>
+            &nbsp;|&nbsp;
+            <Link href="/en-US">English</Link>
+          </Box>
         </Container>
       </div>
     </LayoutBase>

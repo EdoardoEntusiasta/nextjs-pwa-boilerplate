@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:{"Home":"Home","Login":"Login","Welcome to boilerplate":"Welcome to boilerplate"}};
+/*eslint-disable*/module.exports={messages:{"Boilerplate intro":"A boilerplate to start developing your pwa with Nextjs, React, Gsap, and Material-UI","Home":"Home","Login":"Login","Login modal":"Login modal","Welcome to boilerplate":"Welcome to an Entusiasta's boilerplate","Wish you good work":"Wish you a good work"}};

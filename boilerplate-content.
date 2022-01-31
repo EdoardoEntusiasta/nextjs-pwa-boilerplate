@@ -7,6 +7,7 @@ React
 Typescript
 styled-components
 tsconfig-paths-webpack-plugin (for Storybook)
+https://icons.lightvue.org/icons
 
 
 ISSUES ENCOUNTERED
@@ -14,6 +15,15 @@ When running "npm run extract" without NODE_ENV=development
 https://github.com/lingui/js-lingui/issues/952
 
 
+
+
+## Lingui
+
+TO ADD A TRANSLATION
+1. Add a <Trans>placeholder text</Trans> element
+2. execute: npm run extract
+3. Insert the translations in locales/{locale}/messages.po 
+4. Execute npm run compile
 
 
 TO ADD LANGUAGES see: 

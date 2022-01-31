@@ -30,9 +30,15 @@ yarn storybook
 
 
 ## Lingui js
-Configuration based on this guide
-
+Configuration is based on the following guide
 https://blog.logrocket.com/complete-guide-internationalization-nextjs/
+
+TO ADD A TRANSLATION
+1. Add a <Trans>placeholder text</Trans> element
+2. execute: npm run extract to extract the placeholders
+3. Insert the relative translation in locales/{locale}/messages.po
+4. Execute npm run compile & npm run dev
+
 
 
 ## Learn More

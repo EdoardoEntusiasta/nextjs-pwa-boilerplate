@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { zIndex } from '@theme/DesignSystem/Variables';
 import { gray, primary } from '@theme/DesignSystem/Colors';
 import media from '@theme/DesignSystem/MediaQueries';
-// import Icon from '@components/atoms/Icon/styled';
+import Icon from '@atoms/Icon/styled';
 import { remCalc } from '@utils/helpers';
 
 export const Dialog = styled.div``;
@@ -39,14 +39,14 @@ const hasFooter = css`
             max-height: ${remCalc(540)};
         `}
     ${Content} {
-        padding: 4rem 1rem ${remCalc(40)};
+        padding: 2rem 1rem ${remCalc(40)};
     }
 `;
 
 const hasNoFooter = css`
     max-height: ${remCalc(664)};
     ${Content} {
-        padding: 4rem 1rem;
+        padding: 2rem 1rem;
     }
 `;
 
@@ -78,7 +78,7 @@ export const StyledModal = styled.div`
             border-radius: 4px;
         `}
         
-        ${/*Icon.StyledIcon*/'icon'} {
+        ${Icon.StyledIcon} {
             position: absolute;
             z-index: ${zIndex.up};
             top: 1rem;
@@ -113,8 +113,8 @@ export const StyledModal = styled.div`
             }
             ${Content} {
                 ${media.min.md`
-                    padding-left: ${remCalc(100)};
-                    padding-right: ${remCalc(100)};
+                    padding-left: ${remCalc(20)};
+                    padding-right: ${remCalc(20)};
                 `}
             }
         }

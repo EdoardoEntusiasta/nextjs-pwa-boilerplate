@@ -8,6 +8,8 @@ export const primary = {
     glass: '#091153',
 };
 
+export const defaultColorIcon = '#2f2f2f';
+
 export const gray = {
     black: '#000000',
     shade1: '#333333',

@@ -10,7 +10,7 @@ import IconButton from '@mui/material/IconButton';
 
 import { StyledBar } from './styled';
 import { Trans } from '@lingui/macro';
-
+import { zIndex } from '@theme/DesignSystem/Variables';
 
 function Copyright() {
   return (
