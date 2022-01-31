@@ -47,6 +47,7 @@ TO ADD A TRANSLATION
 4. Execute "npm run compile & npm run dev"
 
 LINKS
+
 If you want to make sure that the links follow the current translation, use the TextLink component which automatically adds the prefix of the active language.
 
 ## Integrated fetch calls
