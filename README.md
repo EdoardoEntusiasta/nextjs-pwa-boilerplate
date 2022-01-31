@@ -1,4 +1,9 @@
+## What's this
+
+A ready-made package for website development and progressive web apps. It includes translations, storybooks, an idea for the organization of services, and some components of common use.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
 The package is made of:
