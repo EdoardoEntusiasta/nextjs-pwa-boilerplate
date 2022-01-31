@@ -47,6 +47,10 @@ TO ADD A TRANSLATION
 4. Execute "npm run compile & npm run dev"
 
 
+## Integrated fetch calls
+todo
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
