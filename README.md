@@ -31,7 +31,7 @@ yarn storybook
 To learn more visit the official documentation: https://storybook.js.org/docs/react/get-started/introduction
 
 
-## Lingui js
+## Lingui js and internazionalization
 Configuration is based on the following guide
 https://blog.logrocket.com/complete-guide-internationalization-nextjs/
 
@@ -46,6 +46,8 @@ TO ADD A TRANSLATION
 3. Insert the relative translation in locales/{locale-slug}/messages.po
 4. Execute "npm run compile & npm run dev"
 
+LINKS
+If you want to make sure that the links follow the current translation, use the TextLink component which automatically adds the prefix of the active language.
 
 ## Integrated fetch calls
 todo
