@@ -37,7 +37,7 @@ TO ADD A TRANSLATION
 1. Add a `<Trans>`placeholder text`</Trans>` element
 2. Execute: "npm run extract" to extract the placeholders and make them available for translation
 3. Insert the relative translation in locales/{locale}/messages.po
-4. Execute npm run compile & npm run dev
+4. Execute "npm run compile & npm run dev"
 
 
 
