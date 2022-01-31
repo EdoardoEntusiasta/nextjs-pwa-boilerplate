@@ -15,10 +15,8 @@ import { zIndex } from '@theme/DesignSystem/Variables';
 function Copyright() {
   return (
     <Typography sx={{color: '#DDDDDD'}} variant="body2" color="text.secondary">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
+      {'Entusiasta: '}
+      <Link color={'inherit'} target="_blank" href="https://github.com/EdoardoEntusiasta/nextjs-pwa-boilerplate">boilerplate info and configuration</Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -75,7 +73,7 @@ const LayoutBase = ({ children }) => {
         >
           <Container maxWidth="sm">
             <Typography variant="body1">
-              My sticky footer can be found here.
+              <Trans>If you need more info</Trans>
             </Typography>
             <Copyright />
           </Container>

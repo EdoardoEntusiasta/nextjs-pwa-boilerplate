@@ -6,8 +6,6 @@ const BASE_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
 export class CoreVerbsService {
 
-    // todo setup degli headers
-
     constructor() {}
     
       formatErrors(error) {
@@ -26,7 +24,7 @@ export class CoreVerbsService {
           responseType:'stream'
         })
         .then(response => {
-          return new CoreResponseModel(response) as CoreResponseModel;
+          return new CoreResponseModel(response);
         })
         .catch(err => console.log(err));
       }
@@ -39,7 +37,6 @@ export class CoreVerbsService {
           data: body
         })
         .then(response => {
-		  //console.log(response);	
           return new CoreResponseModel(response);
         })
         .catch(err => console.log(err));

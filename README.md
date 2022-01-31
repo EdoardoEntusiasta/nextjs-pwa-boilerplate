@@ -35,12 +35,16 @@ To learn more visit the official documentation: https://storybook.js.org/docs/re
 Configuration is based on the following guide
 https://blog.logrocket.com/complete-guide-internationalization-nextjs/
 
+TO ADD A LANGUAGE
+1. Add new locale slug in next.config.js -> locales [...]
+2. Add the same locale slug in .linguirc -> locales [...]
+3. At the next refresh the localhost/{locale-slug} address will be immediately available
+
 TO ADD A TRANSLATION
 1. Add a `<Trans>`placeholder text`</Trans>` element
 2. Execute: "npm run extract" to extract the placeholders and make them available for translation
-3. Insert the relative translation in locales/{locale}/messages.po
+3. Insert the relative translation in locales/{locale-slug}/messages.po
 4. Execute "npm run compile & npm run dev"
-
 
 
 ## Learn More

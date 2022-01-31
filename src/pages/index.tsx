@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
-import { Box } from '@mui/material';
+import { Box, Card } from '@mui/material';
 
 // Translations
 import { Trans } from '@lingui/macro';
@@ -57,7 +57,10 @@ const Home: NextPage = (props) => {
   userService.get();
 
   const textRef = useRef(null);
+
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalInfoOpen, setModalInfoOpen] = useState(false);
+
   useEffect(() => {
     gsap.fromTo(
       textRef.current,
@@ -75,6 +78,7 @@ const Home: NextPage = (props) => {
 
   return (
     <>
+    {/* @ts-ignore */}
     <Modal open={modalOpen} set_open={setModalOpen}>
       <LoginForm></LoginForm>
     </Modal>

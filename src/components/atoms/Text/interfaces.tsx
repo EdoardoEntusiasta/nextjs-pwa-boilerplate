@@ -1,7 +1,7 @@
 import { IGradient } from '@utils/GlobalInterfaces';
 
 export interface IText extends IGradient {
-    text?: string;
+    text?: string | JSX.Element;
     strong?: boolean;
     color?: string;
     gradient?: any;

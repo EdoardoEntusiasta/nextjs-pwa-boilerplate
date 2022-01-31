@@ -16,7 +16,7 @@ export default interface IButton {
   /**
    * Button contents
    */
-  label: string;
+  label: string | JSX.Element;
   variant?: string;
   /**
    * Optional click handler
