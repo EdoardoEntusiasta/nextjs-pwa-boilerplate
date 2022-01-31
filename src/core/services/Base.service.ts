@@ -4,7 +4,6 @@ import { CoreServiceErrorModel } from '../Models/ServiceError.model';
 import { catchError, map } from 'rxjs/operators';
 import { throwError, of } from 'rxjs';
 import { CoreResponseModel } from '@core/models/Response.model';
-import { IResponse } from '@core/interfaces/IResponse';
 
 
 export class CoreBaseService {
@@ -142,10 +141,7 @@ export class CoreBaseService {
     */
     update(data, code = -1) {
       return this.apiService.patch(this.getUpdatePath(data, code), data)
-      .then(item => {
-        if(item.data.risultato == 'ko') {
-          return item;
-        }
+      .then((item: CoreResponseModel) => {
         if (this.T) {
           item.data = new this.T(item.data);
           this.instantiateSubObjects(this.T, item.data);
@@ -161,7 +157,7 @@ export class CoreBaseService {
     */
     delete(data = null, idSlug = true) {
       return this.apiService.delete(this.getDeletePath(data, idSlug), data )
-      .then(item => {
+      .then((item: CoreResponseModel) => {
         return item;
       }).catch(catchError(this.errorHandl));
     }
@@ -172,7 +168,7 @@ export class CoreBaseService {
     */
     deleteById(path, id) {
       return this.apiService.delete(path + id)
-      .then(item => {
+      .then((item: CoreResponseModel) => {
         return item;
       }).catch(catchError(this.errorHandl));
     }
@@ -183,11 +179,7 @@ export class CoreBaseService {
     */
     create(data) {
       return this.apiService.post(this.getCreatePath(), data)
-      .then(item => {
-		//console.log(item);  
-        if(item.data.risultato == 'ko') {
-          return item;
-        }
+      .then((item: CoreResponseModel) => {
         if (this.T) {
           if (Array.isArray(item.data)) {
             const list: Array<any> = [];
@@ -216,7 +208,7 @@ export class CoreBaseService {
     */
     put(data, code = null) {
       return this.apiService.put(this.getCreatePath(/*data, code*/), data)
-      .then(item => {
+      .then((item: CoreResponseModel) => {
         if(item.data.risultato == 'ko') {
           return item;
         }
