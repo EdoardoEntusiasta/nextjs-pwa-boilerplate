@@ -27,7 +27,7 @@ import Modal from '@molecules/Modal';
 
 // Drafts
 import LoginForm from '@mytools/components/LoginForm';
-import { UsersService } from '@mytools/services/SampleService';
+import { UsersService } from '@mytools/services/UserService';
 
 /**
  * If you export a function called getStaticProps (Static Site Generation) from a page, 

@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 // Material
 import Typography from '@mui/material/Typography';
@@ -17,11 +17,8 @@ import LayoutBase from 'layouts/base/';
 // Gsap
 import { gsap } from "gsap";
 
-// Molecules
-import Modal from '@molecules/Modal';
-
 // Drafts
-import { UsersService } from '@mytools/services/SampleService';
+import { UsersService } from '@mytools/services/UserService';
 
 /**
  * If you export a function called getStaticProps (Static Site Generation) from a page, 

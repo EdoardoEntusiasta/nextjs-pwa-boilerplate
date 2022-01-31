@@ -54,16 +54,6 @@ export class CoreBaseService {
         }
       }
     }
-
-    /**
-     * Attach a React state dispatcher
-     * to which deliver the responses
-     * @param {*} reactState 
-    */
-    useState(reactState) {
-      this.reactState = reactState;
-      return this;
-    }
     
     /**
      * Change temporary output model
