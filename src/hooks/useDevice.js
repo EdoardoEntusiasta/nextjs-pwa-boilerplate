@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 
+
+
 export const useDevice = () => {
+
     const [deviceInfo, setDeviceInfo] = useState({
         type: undefined,
         os: undefined,
@@ -10,9 +13,11 @@ export const useDevice = () => {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const getDeviceInfo = () => {
-                const useragent = navigator.userAgent;
-                const platform = navigator.platform;
+                const useragent = navigator.userAgent, 
+                    platform = navigator.userAgentData.platform;
+
                 const getType = () => {
+
                     if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(useragent)) {
                         return 'tablet';
                     }
