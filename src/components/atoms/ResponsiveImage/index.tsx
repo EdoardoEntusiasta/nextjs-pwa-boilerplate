@@ -1,12 +1,11 @@
 // @ts-nocheck
 
 import { breakpoints } from '@theme/DesignSystem/Variables';
-import { useViewport, useWebPSupport } from '@hooks/index';
+import { useViewport } from '@hooks/index';
 import { useState } from 'react';
 import { StyledResponsiveImage, Placeholder, Picture, Img } from './styled';
 import { IResponsiveImage } from './interfaces';
 import { useInView } from 'react-intersection-observer';
-import { imagePlaceholderQuality } from '@theme/DesignSystem/Variables';
 
 const ResponsiveImage = ({
     class_name,
@@ -30,28 +29,18 @@ const ResponsiveImage = ({
 
     const sourcesFrag = () => {
         const sourcesProps = [xs, sm, md, lg, xl, xxl].reverse();
-
         let sources: any = [];
-
         Object.keys(breakpoints)
             .reverse()
             .forEach((breakpoint, i) => {
                 if(typeof sourcesProps[i] != 'undefined') {
-                sources = [
-                    ...sources,
-                    <source
-                        key={i}
-                        srcSet={
-                            // eslint-disable-next-line react-hooks/rules-of-hooks
-                            useWebPSupport()
-                                ? sourcesProps[i].image.url + '?format=webp'
-                                : sourcesProps[i].image.url
-                        }
-                        media={`(min-width:${breakpoints[breakpoint]}px)`}
-                        // eslint-disable-next-line react-hooks/rules-of-hooks
-                        type={useWebPSupport() ? 'image/webp' : ''}
-                    />,
-                ];
+                    sources.push(
+                        <source
+                            key={i}
+                            srcSet={sourcesProps[i].image.url}
+                            media={`(min-width:${breakpoints[breakpoint]}px)`}
+                        />
+                    );
                 }
             });
 

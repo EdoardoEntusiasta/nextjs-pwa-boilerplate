@@ -1,14 +1,13 @@
 import { default as NextImage } from 'next/image';
-import { useWebPSupport } from '@hooks/index';
 import { IImage } from './interfaces';
-import { getModifiers, placeholderImages } from '@utils/helpers';
+import { getModifiers } from '@utils/helpers';
 import { StyledImage, FlippedImage } from './styled';
 
 const Image = ({ modifiers, lazy, mirror, alt, width, height, image }: IImage) => {
 
     const imageFrag = (
         <NextImage
-            src={useWebPSupport() ? `${image.url}?format=webp&width=${width}` : `${image.url}?width=${width}`}
+            src={`${image.url}`}
             alt={alt}
             width={width}
             height={height}
@@ -17,10 +16,6 @@ const Image = ({ modifiers, lazy, mirror, alt, width, height, image }: IImage) =
                 ? {
                       loading: 'lazy',
                       placeholder: 'blur',
-                      // eslint-disable-next-line react-hooks/rules-of-hooks
-                      blurDataURL: useWebPSupport()
-                          ? `${image.url}?format=webp&width=${width}`
-                          : `${image.url}?width=${width}`,
                   }
                 : { priority: true })}
         />
