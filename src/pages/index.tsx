@@ -10,7 +10,7 @@ import { Box } from '@mui/material';
 
 // Translations
 import { Trans } from '@lingui/macro';
-import { loadTranslation } from '@utils/LinguiUtils';
+import { loadTranslation } from '@helpers/index';
 
 // Atoms
 import Text from '@atoms/Text';

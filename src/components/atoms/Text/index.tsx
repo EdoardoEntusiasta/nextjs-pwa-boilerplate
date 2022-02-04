@@ -1,6 +1,5 @@
 import { TextWrapper, StyledText } from './styled';
 import { IText } from './interfaces';
-import { parsedText } from '@helpers/Utils';
 
 const Text = ({ tag, strong, type, gradient, color, align, text }: IText) => {
 
@@ -12,7 +11,7 @@ const Text = ({ tag, strong, type, gradient, color, align, text }: IText) => {
             color={color}
             strong={strong}
             type={type}
-            dangerouslySetInnerHTML={ isString ? { __html: parsedText(text ? text : '') } : null}
+            dangerouslySetInnerHTML={ isString ? { __html: text } : null}
         >
             { ! isString ? 
                 <>{ text }</>

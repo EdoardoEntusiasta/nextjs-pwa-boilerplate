@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { breakpoints } from '@theme/DesignSystem/Variables';
 
+
 export const useViewport = () => {
     const { xs, sm, md, lg, xl } = breakpoints;
 
@@ -16,6 +17,7 @@ export const useViewport = () => {
             let height = window.innerHeight;
 
             let getViewportName = () => {
+
                 if (width >= xs && width < sm) {
                     return 'xs';
                 } else if (width >= sm && width < md) {
@@ -42,7 +44,6 @@ export const useViewport = () => {
 
         return () => window.removeEventListener('resize', handleResize);
 
-        
     }, []);
     return viewport;
 };

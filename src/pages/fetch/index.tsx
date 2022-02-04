@@ -18,7 +18,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 // Translations
 import { Trans } from '@lingui/macro';
-import { loadTranslation } from '@utils/LinguiUtils';
+import { loadTranslation } from '@helpers/index';
 
 
 

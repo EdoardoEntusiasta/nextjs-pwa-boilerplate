@@ -14,12 +14,6 @@ export interface IFile {
     title?: string;
 }
 
-export interface ILink {
-    url?: string;
-    title?: string;
-    target?: 'self' | 'blank' | 'parent' | 'top';
-}
-
 export interface IGradient {
     gradient?:
         | 'none'
