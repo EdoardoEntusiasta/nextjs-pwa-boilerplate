@@ -1,13 +1,5 @@
 export const unit = 8;
 
-// basic mesure
-export const units = {
-    halfGap: unit,
-    gap: unit * 2,
-    oneHalfGap: unit * 3,
-    doubleGap: unit * 4,
-};
-
 // grid
 export const grid = {
     columns: 12,
@@ -113,5 +105,3 @@ export const zIndex = {
     header: 50,
     modal: 100,
 };
-
-export const imagePlaceholderQuality = 10;

@@ -147,7 +147,7 @@ const ResponsiveImage = ({
     const placeHolderFrag = (
         <Placeholder>
             <source
-                srcSet={xs.image.url + `?format=jpg&quality=${imagePlaceholderQuality}`}
+                srcSet={xs.image.url + `?format=jpg&quality=5`}
             />
             <Img
                 alt={alt}
