@@ -29,6 +29,10 @@ const nextConfig = {
       },
     ],
   },
+  images: {
+    webpack5: true,
+    domains: ["images.contentstack.io"]
+  }
 }
 
 module.exports = nextConfig

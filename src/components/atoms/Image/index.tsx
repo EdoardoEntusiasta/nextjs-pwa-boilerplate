@@ -5,6 +5,7 @@ import { getModifiers, placeholderImages } from '@utils/helpers';
 import { StyledImage, FlippedImage } from './styled';
 
 const Image = ({ modifiers, lazy, mirror, alt, width, height, image }: IImage) => {
+
     const imageFrag = (
         <NextImage
             src={useWebPSupport() ? `${image.url}?format=webp&width=${width}` : `${image.url}?width=${width}`}
@@ -16,6 +17,7 @@ const Image = ({ modifiers, lazy, mirror, alt, width, height, image }: IImage) =
                 ? {
                       loading: 'lazy',
                       placeholder: 'blur',
+                      // eslint-disable-next-line react-hooks/rules-of-hooks
                       blurDataURL: useWebPSupport()
                           ? `${image.url}?format=webp&width=${width}`
                           : `${image.url}?width=${width}`,

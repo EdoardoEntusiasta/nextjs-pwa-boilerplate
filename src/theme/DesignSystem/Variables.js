@@ -93,6 +93,13 @@ export const fontTypes = {
     },
 };
 
+// transtions
+export const transitions = {
+    fast: 0.2,
+    pace: 0.4,
+    slow: 1.2,
+};
+
 // z-index
 export const zIndex = {
     lower: -2,
@@ -106,3 +113,5 @@ export const zIndex = {
     header: 50,
     modal: 100,
 };
+
+export const imagePlaceholderQuality = 10;

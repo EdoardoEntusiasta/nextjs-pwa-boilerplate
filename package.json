@@ -18,11 +18,13 @@
     "@lingui/react": "^3.13.2",
     "@mui/material": "^5.3.1",
     "axios": "^0.25.0",
+    "gsap": "^3.9.1",
     "light-icons": "^1.0.10",
     "next": "12.0.9",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-gsap": "^3.2.1",
+    "react-intersection-observer": "^8.33.1",
     "styled-components": "^5.3.3",
     "tsconfig-paths-webpack-plugin": "^3.5.2"
   },

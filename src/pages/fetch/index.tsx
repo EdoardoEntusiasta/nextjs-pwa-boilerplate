@@ -78,6 +78,7 @@ const Blog: NextPage = (props) => {
   const textRef = useRef(null);
 
   useEffect(() => {
+    // @ts-ignore
     userService.get().then((res: CoreResponseModel) => {
       setData(res.getData());
       setLoading(false);
