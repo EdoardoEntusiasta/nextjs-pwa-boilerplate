@@ -1,3 +1,10 @@
+/** 
+ * For this code I have to thank two smart guys 
+ * Jacopo Panzera https://github.com/Sliver02
+ * and 
+ * Andrea Caccia 
+ */
+
 import { ReactNode } from 'react';
 
 export interface IBase {

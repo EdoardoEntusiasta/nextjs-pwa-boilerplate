@@ -1,3 +1,10 @@
+/** 
+ * For this component I have to thank two smart guys 
+ * Jacopo Panzera https://github.com/Sliver02
+ * and 
+ * Andrea Caccia 
+ */
+
 import { StyledModal, Dialog, ContentWrapper, Content, Footer } from './styled';
 import { IModal } from './interfaces';
 import { useEffect, useState } from 'react';

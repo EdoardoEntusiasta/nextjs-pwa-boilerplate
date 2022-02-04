@@ -1,3 +1,10 @@
+/** 
+ * For this component I have to thank two smart guys 
+ * Jacopo Panzera https://github.com/Sliver02
+ * and 
+ * Andrea Caccia 
+ */
+
 import { ITextLink } from './interfaces';
 import Link from '@mui/material/Link';
 import { useRouter } from 'next/router'
