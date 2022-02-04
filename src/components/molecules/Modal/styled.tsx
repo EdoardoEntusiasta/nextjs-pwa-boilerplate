@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { zIndex } from '@theme/DesignSystem/Variables';
-import { gray, primary } from '@theme/DesignSystem/Colors';
-import media from '@theme/DesignSystem/MediaQueries';
+import { zIndex } from '@theme/Variables';
+import { gray, primary } from '@theme/Colors';
+import media from '@theme/MediaQueries';
 import Icon from '@atoms/Icon/styled';
 import { remCalc } from '@utils/helpers';
 

@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { transitions } from '@theme/DesignSystem/Variables';
+import { transitions } from '@theme/Variables';
 
 export const Placeholder = styled.picture``;
 export const Picture = styled.picture``;

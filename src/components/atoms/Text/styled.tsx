@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
-import { fontTypes, unit } from '@theme/DesignSystem/Variables';
-import { textGradient } from 'theme/DesignSystem/Colors';
-import media from '@theme/DesignSystem/MediaQueries';
+import { fontTypes, unit } from '@theme/Variables';
+import media from '@theme/MediaQueries';
 import { remCalc } from '@utils/helpers';
 
 
@@ -138,7 +137,7 @@ export const StyledText = styled.p`
     ${(props: any) => !!props.color && `color: ${props.color};`}
     ${(props: any) => (!!props.tag && props.tag !== 'p' ? title : paragraph)}
     ${(props: any) => !!props.type && getType(props.type)}
-    ${(props: any) => !!props.gradient && props.gradient !== 'none' && textGradient(props.gradient)}
+
 `;
 
 const textStyles = {

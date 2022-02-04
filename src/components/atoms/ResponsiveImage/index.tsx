@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { breakpoints } from '@theme/DesignSystem/Variables';
+import { breakpoints } from '@theme/Variables';
 import { useViewport } from '@hooks/index';
 import { useState } from 'react';
 import { StyledResponsiveImage, Placeholder, Picture, Img } from './styled';

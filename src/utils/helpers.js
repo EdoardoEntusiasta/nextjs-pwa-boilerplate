@@ -5,7 +5,7 @@
  */
 
 
-import { fontTypes } from '@theme/DesignSystem/Variables';
+import { fontTypes } from '@theme/Variables';
 
 /**
  * IdGenerator

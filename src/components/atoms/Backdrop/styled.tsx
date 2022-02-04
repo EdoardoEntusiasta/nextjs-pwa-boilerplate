@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { gray } from '@theme/DesignSystem/Colors';
+import { gray } from '@theme/Colors';
 import { rgba } from 'polished';
-import { zIndex } from '@theme/DesignSystem/Variables';
+import { zIndex } from '@theme/Variables';
 
 export const StyledBackdrop = styled.div`
     position: fixed;
