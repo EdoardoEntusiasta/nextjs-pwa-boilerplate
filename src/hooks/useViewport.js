@@ -41,6 +41,8 @@ export const useViewport = () => {
         handleResize();
 
         return () => window.removeEventListener('resize', handleResize);
+
+        
     }, []);
     return viewport;
 };
