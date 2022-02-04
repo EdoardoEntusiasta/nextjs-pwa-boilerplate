@@ -1,6 +1,7 @@
 import type { I18n } from '@lingui/core'
 import { en, it } from 'make-plural/plurals'
 
+/** todo */
 
 /**
  * Anounce which locales we are going to use and connect them to approprite plural rules
