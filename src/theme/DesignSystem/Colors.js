@@ -1,5 +1,3 @@
-import { rgba, linearGradient } from 'polished';
-import { css } from 'styled-components';
 
 export const primary = {
     base: '#000FF5',
