@@ -1,7 +1,8 @@
 ## What's this
 
 The result of collaborations from which I have drawn the best, combining the parts that I appreciated most of my and other people's work.
--Credis inside-
+
+-relevants credis inside-
 
 A ready-made package for website development and progressive web apps. It includes translations, storybooks, an idea for the organization of services, and some common components based on Material-ui.
 
