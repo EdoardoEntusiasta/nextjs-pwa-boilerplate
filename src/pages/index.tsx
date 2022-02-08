@@ -29,6 +29,11 @@ import Modal from '@molecules/Modal';
 import LoginForm from '@mytools/components/LoginForm';
 import { UsersService } from '@mytools/services/UserService';
 
+// Redux
+import { useSelector, useDispatch } from 'react-redux'
+import { decrement, increment } from '@stores/reducers/counterReducer'
+
+
 /**
  * If you export a function called getStaticProps (Static Site Generation) from a page, 
  * Next.js will pre-render this page at build time using the props returned by getStaticProps.
@@ -53,6 +58,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 const Home: NextPage = (props) => {
 
   const userService = new UsersService();
+
+  const count = useSelector((state: any) => state.counter.value)
+  const dispatch = useDispatch()
 
   userService.get();
 
@@ -97,6 +105,20 @@ const Home: NextPage = (props) => {
           <Box mt={1.5}>
             <Button label={<Trans>Login modal</Trans>} variant='contained' onClick={() => setModalOpen(true)} />
           </Box>
+
+          <Box mt={3}>
+            <Typography variant="h6" component="h1" gutterBottom>
+              <Trans>Redux</Trans>
+            </Typography>
+            <div>
+              <Button label={<Trans>Decrement</Trans>} onClick={() => dispatch(decrement())} variant="outlined"/>
+              &nbsp;
+              <span>{count}</span>
+              &nbsp;
+              <Button label={<Trans>Increment</Trans>} onClick={() => dispatch(increment())} variant="outlined"/>
+            </div>
+          </Box>
+
           <Box mt={5}>
             <Link href="/it">Italiano</Link>
             &nbsp;|&nbsp;

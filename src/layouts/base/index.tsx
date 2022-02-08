@@ -13,6 +13,8 @@ import { Trans } from '@lingui/macro';
 import TextLink from '@atoms/TextLink';
 
 
+
+
 function Copyright() {
   return (
     <Typography sx={{color: '#DDDDDD'}} variant="body2" color="text.secondary">
@@ -26,6 +28,7 @@ function Copyright() {
 
 
 const LayoutBase = ({ children }) => {
+
   return (
     <>
     <Box sx={{ flexGrow: 1 }}>

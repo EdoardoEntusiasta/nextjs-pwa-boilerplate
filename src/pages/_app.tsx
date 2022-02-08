@@ -6,6 +6,11 @@ import { I18nProvider } from '@lingui/react'
 import { useRouter } from 'next/router'
 import { useRef } from 'react'
 
+
+import { Provider } from 'react-redux';
+import authStore from '@stores/store';
+
+
 function MyApp({ Component, pageProps }: AppProps) {
 
   const router = useRouter()
@@ -22,9 +27,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
   return (
-    <I18nProvider i18n={i18n}>
-      <Component {...pageProps} />
-    </I18nProvider>
+    <Provider store={authStore}>
+      <I18nProvider i18n={i18n}>
+        <Component {...pageProps} />
+      </I18nProvider>
+    </Provider>
   );
 }
 

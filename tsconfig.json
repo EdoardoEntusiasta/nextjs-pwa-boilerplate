@@ -10,6 +10,7 @@
       "@organisms/*": ["components/organisms/*"],
 
       "@mytools/*": ["my_tools/*"],
+      "@stores/*": ["stores/*"],
 
       "@helpers/*": ["utils/*"],
       "@utils/*": ["utils/*"],
